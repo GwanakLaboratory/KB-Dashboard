@@ -1,29 +1,296 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css') layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+
+@import 'tw-animate-css';
+
+/* HeroUI (토스트) */
+@plugin './hero.ts';
+@source '../node_modules/@heroui/theme/dist/components/(toast|button|dropdown|menu|popover|input|ripple|spinner).js';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --text-2xs: 11px;
+  --text-2xs--line-height: 16px;
+  --text-xs: 13px;
+  --text-xs--line-height: 18px;
+  --text-sm: 15px;
+  --text-sm--line-height: 21px;
+  --text-base: 17px;
+  --text-base--line-height: 25px;
+  --text-lg: 19px;
+  --text-lg--line-height: 27px;
+  --text-xl: 21px;
+  --text-xl--line-height: 29px;
+  --text-2xl: 25px;
+  --text-2xl--line-height: 33px;
+  --text-3xl: 31px;
+  --text-3xl--line-height: 37px;
+  --text-4xl: 37px;
+  --text-4xl--line-height: 41px;
+  --text-5xl: 46px;
+  --text-5xl--line-height: 1;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-surface: hsl(var(--surface));
+  --color-ink-2: hsl(var(--ink-2));
+  --color-track: hsl(var(--track));
+  --color-faint: hsl(var(--faint));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-selected: hsl(var(--selected));
+  --color-selected-foreground: hsl(var(--selected-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-risk: hsl(var(--risk));
+  --color-risk-bar: hsl(var(--risk-bar));
+  --color-risk-soft: hsl(var(--risk-soft));
+
+  --color-positive: hsl(var(--positive));
+  --color-positive-soft: hsl(var(--positive-soft));
+
+  --color-kb-gold: hsl(var(--kb-gold));
+
+  --color-brand-dark: hsl(var(--brand-dark));
+  --color-brand-dark-border: hsl(var(--brand-dark-border));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --animate-ai-gradient: ai-gradient 3s ease infinite;
+  --animate-ai-shimmer: ai-shimmer 1.8s linear infinite;
+
+  /* 글자 크기 단계 — 화면의 모든 글자는 이 7단계만 쓴다 (Text 컴포넌트 · text-title 등 유틸) */
+  --text-title: 30px;
+  --text-title--line-height: 1.25;
+  --text-title--font-weight: 800;
+  --text-title--letter-spacing: -0.02em;
+  --text-heading: 22px;
+  --text-heading--line-height: 1.35;
+  --text-heading--font-weight: 700;
+  --text-heading--letter-spacing: -0.015em;
+  --text-subheading: 18px;
+  --text-subheading--line-height: 1.4;
+  --text-subheading--font-weight: 700;
+  --text-subheading--letter-spacing: -0.01em;
+  --text-body: 16px;
+  --text-body--line-height: 1.6;
+  --text-body--font-weight: 500;
+  --text-label: 15px;
+  --text-label--line-height: 1.4;
+  --text-label--font-weight: 600;
+  --text-caption: 14px;
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 500;
+  --text-micro: 12px;
+  --text-micro--line-height: 1.3;
+  --text-micro--font-weight: 700;
+
+  --font-sans:
+    Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  @keyframes ai-gradient {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  @keyframes ai-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-thin {
+  /* 얇고 연한 스크롤바. Chrome·Safari 는 ::-webkit-scrollbar 로 6px,
+     지원하지 않는 Firefox 는 표준 속성(thin)으로 그린다.
+     (Chrome 은 scrollbar-width 가 있으면 ::-webkit-scrollbar 를 무시해서 분기한다) */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: hsl(var(--border));
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--faint));
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+}
 
 @layer base {
+  /* ── 디자인 토큰 (스타일 가이드 기준) ──────────────────────────
+     값은 shadcn 규칙대로 HSL 채널만 적고, 사용할 때 hsl(var(--x)) 로 감싼다.
+     Point = KB Yellow, 강조 = Risk Red, 선택 상태 = KB Gray. */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --primary: 226 100% 64%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 226 100% 64%;
-    --radius: 0.5rem;
+    --background: 45 18.2% 95.7%; /* #F6F5F2 */
+    --foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --surface: 0 0% 100%; /* #FFFFFF */
+    --ink-2: 44 9.8% 30%; /* #545045 */
+    --muted: 40 18.7% 93.7%; /* #F2F0EC */
+    --muted-foreground: 37.5 8.1% 38.8%; /* #6B655B */
+    --secondary: 40 18.7% 93.7%; /* #F2F0EC */
+    --secondary-foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --accent: 40 18.7% 93.7%; /* #F2F0EC */
+    --accent-foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --border: 40 20.7% 88.6%; /* #E8E4DC */
+    --input: 40 20.7% 88.6%; /* #E8E4DC */
+    --ring: 36 11.6% 33.7%; /* #60584C */
+    --primary: 44.2 100% 50%; /* #FFBC00 */
+    --primary-foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --selected: 36 11.6% 33.7%; /* #60584C */
+    --selected-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 4.9 67.5% 54.1%; /* #D9483B */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --risk: 3.2 71.3% 41%; /* #B3261E */
+    --risk-bar: 4.9 67.5% 54.1%; /* #D9483B */
+    --risk-soft: 6.3 82.6% 95.5%; /* #FDECEA */
+    --positive: 151.9 52.4% 28.8%; /* #23704C */
+    --positive-soft: 145.7 38.9% 92.9%; /* #E6F4EC */
+    --track: 40 18.7% 93.7%; /* #F2F0EC */
+    --faint: 40 7.5% 61%; /* #A39E94 */
+    --kb-gold: 38.6 26.7% 41.2%; /* #85714D */
+    --brand-dark: 34.3 10.1% 13.5%; /* #26231F */
+    --brand-dark-border: 33.3 8.4% 21%; /* #3A3631 */
+    --radius: 1.5rem; /* 카드 24px */
+    /* 차트 범주 색 (dataviz 검증 통과: 색각이상·대비) — 순서대로만 쓴다 */
+    --chart-1: #eda100;
+    --chart-2: #2a78d6;
+    --chart-3: #1baf7a;
+    --chart-4: #6250d6;
+    --chart-5: #eb6834;
+    --shadow-pop:
+      0 0 0 1px rgb(0 0 0 / 0.06), 0 8px 24px -8px rgb(0 0 0 / 0.16);
+
+    /* shadcn Sidebar 토큰 — 위 토큰을 그대로 가리킨다(다크 모드도 자동으로 따라감) */
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--ink-2);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--background);
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
+  }
+
+  .dark {
+    --background: 40 8.1% 7.3%; /* #141311 */
+    --foreground: 42.9 22.6% 93.9%; /* #F3F1EC */
+    --card: 36 9.1% 10.8%; /* #1E1C19 */
+    --card-foreground: 42.9 22.6% 93.9%; /* #F3F1EC */
+    --surface: 36 9.1% 10.8%; /* #1E1C19 */
+    --ink-2: 40 14.6% 79.8%; /* #D3CEC4 */
+    --muted: 34.3 9.1% 15.1%; /* #2A2723 */
+    --muted-foreground: 38.8 9% 62.9%; /* #A9A398 */
+    --secondary: 34.3 9.1% 15.1%; /* #2A2723 */
+    --secondary-foreground: 42.9 22.6% 93.9%; /* #F3F1EC */
+    --accent: 34.3 9.1% 15.1%; /* #2A2723 */
+    --accent-foreground: 42.9 22.6% 93.9%; /* #F3F1EC */
+    --border: 36 9.8% 20%; /* #38342E */
+    --input: 36 9.8% 20%; /* #38342E */
+    --ring: 38.8 10.3% 67.6%; /* #B5AFA4 */
+    --primary: 44.2 100% 50%; /* #FFBC00 */
+    --primary-foreground: 40 10.8% 16.3%; /* #2E2B25 */
+    --selected: 36 11.6% 33.7%; /* #60584C */
+    --selected-foreground: 0 0% 100%; /* #FFFFFF */
+    --destructive: 3.9 74.9% 59.4%; /* #E5544A */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --risk: 4.7 100% 75.1%; /* #FF8A80 */
+    --risk-bar: 3.9 74.9% 59.4%; /* #E5544A */
+    --risk-soft: 5.6 35.6% 17.6%; /* #3D201D */
+    --positive: 149.7 52.4% 63.7%; /* #72D3A2 */
+    --positive-soft: 150 30.8% 15.3%; /* #1B3327 */
+    --track: 34.3 9.1% 15.1%; /* #2A2723 */
+    --faint: 40 7.1% 50.6%; /* #8A8478 */
+    --kb-gold: 38.8 35.8% 62.7%; /* #C2AA7E */
+    --brand-dark: 34.3 10.1% 13.5%; /* #26231F */
+    --brand-dark-border: 33.3 8.4% 21%; /* #3A3631 */
+    --shadow-pop: 0 12px 32px -8px rgb(0 0 0 / 0.6);
+    --chart-1: #c98500;
+    --chart-2: #3987e5;
+    --chart-3: #199e70;
+    --chart-4: #9085e9;
+    --chart-5: #d95926;
   }
 
   /* 본문(main)만 스크롤한다. 끝까지 스크롤했을 때 문서 전체가 튕기며 헤더까지 움직이지 않게 막는다. */
@@ -36,6 +303,14 @@
     @apply bg-background font-sans text-foreground;
     /* 한글 단어 중간(예: '식별' → '식'/'별')에서 줄바꿈되지 않도록 어절 단위로만 줄바꿈한다. */
     word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 
   #root {
@@ -44,42 +319,11 @@
     min-height: 100dvh;
   }
 }
-
-@layer utilities {
-  .scrollbar-hide {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+@layer base {
+  * {
+    @apply border-border;
   }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* 얇고 연한 스크롤바. Chrome·Safari 는 ::-webkit-scrollbar 로 6px,
-     지원하지 않는 Firefox 는 표준 속성(thin)으로 그린다.
-     (Chrome 은 scrollbar-width 가 있으면 ::-webkit-scrollbar 를 무시해서 분기한다) */
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    border-radius: 9999px;
-    background-color: rgb(203 213 225); /* slate-300 */
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(148 163 184); /* slate-400 */
-  }
-
-  @supports not selector(::-webkit-scrollbar) {
-    .scrollbar-thin {
-      scrollbar-width: thin;
-      scrollbar-color: rgb(203 213 225) transparent;
-    }
+  body {
+    @apply bg-background text-foreground;
   }
 }
