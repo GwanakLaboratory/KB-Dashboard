@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import {
   Navigate,
   RouterProvider as BaseRouterProvider,
@@ -6,18 +5,10 @@ import {
 } from 'react-router';
 
 import ComponentsPage from '@/features/components-preview/ComponentsPage';
-
-function HomePage() {
-  const { t } = useTranslation();
-  return (
-    <main className="bg-surface flex min-h-screen items-center justify-center">
-      <h1 className="text-primary text-3xl font-bold">{t('home.title')}</h1>
-    </main>
-  );
-}
+import DashboardPage from '@/features/dashboard/DashboardPage';
 
 const router = createBrowserRouter([
-  { path: '/', element: <HomePage /> },
+  { path: '/', element: <DashboardPage /> },
   { path: '/design-system', element: <ComponentsPage /> },
   { path: '*', element: <Navigate to="/" replace /> },
 ]);

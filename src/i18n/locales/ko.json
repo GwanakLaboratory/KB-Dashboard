@@ -1,6 +1,10 @@
 {
-  "layout": { "documentTitle": "KB Dashboard" },
-  "home": { "title": "KB Dashboard" },
+  "layout": {
+    "documentTitle": "KB Dashboard"
+  },
+  "home": {
+    "title": "KB Dashboard"
+  },
   "sidebar": {
     "serviceName": "유지율 예측 대시보드",
     "nav": {
@@ -11,7 +15,36 @@
       "change": "변경 · 접촉 분석",
       "model": "모델 성능"
     },
-    "theme": { "label": "화면 모드", "light": "라이트 모드", "dark": "다크 모드" },
-    "language": { "label": "언어", "ko": "한국어", "en": "English" }
+    "theme": {
+      "label": "화면 모드",
+      "light": "라이트 모드",
+      "dark": "다크 모드"
+    },
+    "language": {
+      "label": "언어",
+      "ko": "한국어",
+      "en": "English"
+    }
+  },
+  "dashboard": {
+    "title": "예측 수납 현황",
+    "description": "받아야 할 보험료 중 얼마를 받을 것으로 예측되는지 조직 단계별로 봅니다",
+    "search": "검색",
+    "user": {
+      "name": "AI디지털혁신부",
+      "role": "관리자"
+    },
+    "org": {
+      "nation": "전국"
+    },
+    "month": {
+      "label": "기준월",
+      "aria": "기준월 선택"
+    },
+    "horizon": {
+      "aria": "예측 회차",
+      "option": "{{n}}회차"
+    },
+    "export": "리포트 내보내기"
   }
 }

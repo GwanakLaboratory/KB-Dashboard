@@ -1,6 +1,10 @@
 {
-  "layout": { "documentTitle": "KB Dashboard" },
-  "home": { "title": "KB Dashboard" },
+  "layout": {
+    "documentTitle": "KB Dashboard"
+  },
+  "home": {
+    "title": "KB Dashboard"
+  },
   "sidebar": {
     "serviceName": "Retention Forecast",
     "nav": {
@@ -11,7 +15,36 @@
       "change": "Change · Contact",
       "model": "Model Performance"
     },
-    "theme": { "label": "Theme", "light": "Light mode", "dark": "Dark mode" },
-    "language": { "label": "Language", "ko": "한국어", "en": "English" }
+    "theme": {
+      "label": "Theme",
+      "light": "Light mode",
+      "dark": "Dark mode"
+    },
+    "language": {
+      "label": "Language",
+      "ko": "한국어",
+      "en": "English"
+    }
+  },
+  "dashboard": {
+    "title": "Collection Forecast",
+    "description": "How much of the premium due is expected to be collected, by organization level",
+    "search": "Search",
+    "user": {
+      "name": "AI Digital Innovation",
+      "role": "Admin"
+    },
+    "org": {
+      "nation": "Nationwide"
+    },
+    "month": {
+      "label": "Month",
+      "aria": "Select base month"
+    },
+    "horizon": {
+      "aria": "Forecast installment",
+      "option": "{{n}}th"
+    },
+    "export": "Export report"
   }
 }
