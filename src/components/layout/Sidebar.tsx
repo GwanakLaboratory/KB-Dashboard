@@ -1,4 +1,4 @@
-import { Globe, SunMoon, type LucideIcon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import kbLogoDark from '@/assets/kb-logo-dark.png';
@@ -73,13 +73,7 @@ export function Sidebar({ items, activeKey, onNavigate }: SidebarProps) {
         {/* 설정 목록형: 왼쪽 이름 · 오른쪽 토글 */}
         <dl className="m-0 flex flex-col gap-2 px-1.5">
           <div className="flex items-center justify-between gap-3">
-            <Text
-              as="dt"
-              variant="label"
-              tone="subtle"
-              className="flex items-center gap-2"
-            >
-              <SunMoon className="size-[18px]" aria-hidden />
+            <Text as="dt" variant="label" tone="subtle">
               {t('sidebar.theme.label')}
             </Text>
             <dd className="m-0">
@@ -87,13 +81,7 @@ export function Sidebar({ items, activeKey, onNavigate }: SidebarProps) {
             </dd>
           </div>
           <div className="flex items-center justify-between gap-3">
-            <Text
-              as="dt"
-              variant="label"
-              tone="subtle"
-              className="flex items-center gap-2"
-            >
-              <Globe className="size-[18px]" aria-hidden />
+            <Text as="dt" variant="label" tone="subtle">
               {t('sidebar.language.label')}
             </Text>
             <dd className="m-0">

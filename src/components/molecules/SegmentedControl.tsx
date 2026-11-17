@@ -36,7 +36,7 @@ const SIZE = {
   },
   compact: {
     group: 'gap-0.5 bg-muted p-[3px]',
-    item: 'h-[30px] min-w-0 px-3 text-caption font-bold text-muted-foreground',
+    item: 'h-[30px] w-9 min-w-0 px-0 text-caption font-bold text-muted-foreground',
   },
 } as const;
 
