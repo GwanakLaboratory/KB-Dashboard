@@ -1,1 +1,17 @@
-{ "layout": { "documentTitle": "KB Dashboard" }, "home": { "title": "KB Dashboard" } }
+{
+  "layout": { "documentTitle": "KB Dashboard" },
+  "home": { "title": "KB Dashboard" },
+  "sidebar": {
+    "serviceName": "유지율 예측 대시보드",
+    "nav": {
+      "dashboard": "대시보드",
+      "branch": "지점별 유지율",
+      "trend": "회차별 예측 추이",
+      "contract": "계약 단위 예측",
+      "change": "변경 · 접촉 분석",
+      "model": "모델 성능"
+    },
+    "theme": { "label": "화면 모드", "light": "라이트 모드", "dark": "다크 모드" },
+    "language": { "label": "언어", "ko": "한국어", "en": "English" }
+  }
+}

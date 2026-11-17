@@ -1,1 +1,17 @@
-{ "layout": { "documentTitle": "KB Dashboard" }, "home": { "title": "KB Dashboard" } }
+{
+  "layout": { "documentTitle": "KB Dashboard" },
+  "home": { "title": "KB Dashboard" },
+  "sidebar": {
+    "serviceName": "Retention Forecast",
+    "nav": {
+      "dashboard": "Dashboard",
+      "branch": "By Branch",
+      "trend": "Installment Trend",
+      "contract": "Contract Forecast",
+      "change": "Change · Contact",
+      "model": "Model Performance"
+    },
+    "theme": { "label": "Theme", "light": "Light mode", "dark": "Dark mode" },
+    "language": { "label": "Language", "ko": "한국어", "en": "English" }
+  }
+}
